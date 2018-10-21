@@ -1,7 +1,9 @@
 package main
 
+import "suanfa/sort"
+
 func main()  {
 
-	sort.MergeSort([]int{10, 7, 3, 4, 5,534434,677676,8,223}, 9)
+sort.QuickSort([]int{3,5,7,86,3232,56,232},7)
 
 }

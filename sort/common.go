@@ -1,4 +1,5 @@
 package sort
+
 // 将arr[l......mid]和arr[mid+1.....r]两部分进行归并
 func Merge(arr []int, l int, mid int, r int) {
 	num := r - l + 1
@@ -24,12 +25,29 @@ func Merge(arr []int, l int, mid int, r int) {
 		}
 	}
 }
+
 // golang max int
-func Max(first int, args... int) int {
-	for _ , v := range args{
+func Max(first int, args ... int) int {
+	for _, v := range args {
 		if first < v {
 			first = v
 		}
 	}
 	return first
+}
+
+// golang min int
+func Min(first int, args ... int) int {
+	for _, v := range args {
+		if first > v {
+			first = v
+		}
+	}
+	return first
+}
+
+func Swap(arr []int, j int, i int) {
+	t:=arr[j]
+	arr[j]=arr[t]
+	arr[t]=t
 }
