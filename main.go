@@ -1,10 +1,4 @@
 package main
-import (
-
-	"suanfa/sort"
-
-)
-
 
 func main()  {
 
