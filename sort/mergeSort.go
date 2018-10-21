@@ -2,7 +2,7 @@ package sort
 
 import "fmt"
 
-// 归并排序
+// 归并排序   
 func MergeSort(arr []int, n int) {
 
 	mergeSort(arr, 0, n-1)
