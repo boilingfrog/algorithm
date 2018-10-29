@@ -48,6 +48,6 @@ func Min(first int, args ... int) int {
 
 func Swap(arr []int, j int, i int) {
 	t:=arr[j]
-	arr[j]=arr[t]
-	arr[t]=t
-}
+	arr[j]=arr[i]
+	arr[i]=t
+  }
