@@ -13,9 +13,8 @@ func mergeSort(arr []int, l int, r int) {
 	}
 	mid := (l + r) / 2 //问题点可能这个地方会出现内存的溢出
 	mergeSort(arr, l, mid)
-	mergeSort(arr, mid+1, 	r)
+	mergeSort(arr, mid+1, r)
 	if arr[mid] > arr[mid+1] {
 		Merge(arr, l, mid, r)
 	}
 }
-
