@@ -1,14 +1,13 @@
 package sort
 
-func HeapSort(values []int) {
+import "fmt"
 
-	shiftUp(values, 1)
+// HeapSort 为了排序使用的是数组指针
+func HeapSort(data *[3]int) {
+	shiftUp(data)
 }
 
-func shiftUp(data []int, k int) {
+func shiftUp(data *[3]int) {
 
-	if k > 1 && data[k/2] < data[k] {
-		Swap(data, k/2, k)
-		k /= 2
-	}
+	fmt.Println(data[2])
 }
