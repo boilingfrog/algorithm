@@ -26,8 +26,8 @@ func Merge(arr []int, l int, mid int, r int) {
 	}
 }
 
-// golang max int
-func Max(first int, args ... int) int {
+// Max golang max int
+func Max(first int, args ...int) int {
 	for _, v := range args {
 		if first < v {
 			first = v
@@ -36,8 +36,8 @@ func Max(first int, args ... int) int {
 	return first
 }
 
-// golang min int
-func Min(first int, args ... int) int {
+// Min golang min int
+func Min(first int, args ...int) int {
 	for _, v := range args {
 		if first > v {
 			first = v
@@ -47,7 +47,7 @@ func Min(first int, args ... int) int {
 }
 
 func Swap(arr []int, j int, i int) {
-	t:=arr[j]
-	arr[j]=arr[i]
-	arr[i]=t
-  }
+	t := arr[j]
+	arr[j] = arr[i]
+	arr[i] = t
+}

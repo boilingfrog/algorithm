@@ -10,5 +10,6 @@ func MergeSortUp(arr []int, n int) {
 			Merge(arr, i, i+sz-1, Min(i+sz+sz-1, n-1))
 		}
 	}
+
 	fmt.Println(arr)
 }
