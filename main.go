@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	letcode "suanfa/letcode"
+)
 
 func main() {
-	fmt.Println(12121)
+	letcode.TwoSumList()
+	list := letcode.List{}
+	list.Add(122)
+	list.Add(2222)
+
+	fmt.Println()
+
 }
