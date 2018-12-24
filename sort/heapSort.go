@@ -15,5 +15,5 @@ func HeapSort() {
 }
 
 func shiftUp() {
-	fmt.Println(pf)
+
 }

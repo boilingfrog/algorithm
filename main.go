@@ -1,10 +1,7 @@
 package main
 
-import (
-	"suanfa/sort"
-)
+import "fmt"
 
 func main() {
-
-	sort.HeapSort()
+	fmt.Println(12121)
 }
