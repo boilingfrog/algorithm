@@ -1,6 +1,9 @@
 package letcode
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 /*
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -26,6 +29,34 @@ import "fmt"
 
 //  pwwkew
 // ""wobgrovw""
+// abcabcbb
+
+func Max(i, j int) int {
+	if i < j {
+		return j
+	}
+	return i
+}
+func LengthOfLongestSubstringGufang(s string) int {
+	if s == "" {
+		return 0
+	}
+	i, j, max := 0, 1, 0
+	for j <= len(s) {
+		if j == len(s) {
+			max = Max(max, j-i)
+			break
+		}
+		x := strings.IndexByte(s[i:j], s[j])
+		max = Max(max, j-i)
+		if x != -1 {
+			i = i + x + 1
+		}
+		j++
+	}
+	return max
+}
+
 func LengthOfLongestSubstringSilnce(s string) int {
 
 	mapp := make(map[string]int)
@@ -35,12 +66,8 @@ func LengthOfLongestSubstringSilnce(s string) int {
 
 		if _, ok := mapp[s[i:i+1]]; ok {
 			index++
-
 			mappString[index] = s[mapp[s[i:i+1]]+1 : i+1]
-			if mapp[s[i:i+1]]+1 == i {
-				mapp = make(map[string]int)
-
-			}
+			mapp = make(map[string]int)
 
 			mapp[s[i:i+1]] = i
 
@@ -48,7 +75,6 @@ func LengthOfLongestSubstringSilnce(s string) int {
 			mapp[s[i:i+1]] = i
 			mappString[index] += string(s[i : i+1])
 		}
-		fmt.Println(mappString)
 		fmt.Println(mapp)
 	}
 	lenNum := 0
