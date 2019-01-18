@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"algorithm/letcode"
+	"fmt"
+)
 
 func main() {
-	fmt.Println(1212)
-
+	var arr = []int{1, 1}
+	res := letcode.MaxArea(arr)
+	fmt.Println(res)
 }
