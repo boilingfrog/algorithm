@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	var arr = []int{1, 1}
+	var arr = []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
 	res := letcode.MaxArea(arr)
 	fmt.Println(res)
 }
