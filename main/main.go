@@ -22,6 +22,7 @@ func main() {
 	list.Add(3)
 	list.Add(4)
 	fmt.Println(list)
+
 	//res := letcode.MergeTwoLists(list., list1)
 	//fmt.Println(res)
 }
