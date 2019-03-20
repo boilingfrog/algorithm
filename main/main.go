@@ -48,7 +48,7 @@ func Delete(value int, list *ListNode) {
 	p = nil
 }
 
-// ...
+// FindPrevious ...
 func FindPrevious(value int, list *ListNode) *ListNode {
 	p := list
 	for p.Next != nil && p.Next.Val != value {
