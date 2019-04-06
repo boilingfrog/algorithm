@@ -4,122 +4,126 @@ import (
 	"fmt"
 )
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-type List struct {
-	headNode *ListNode //头节点
-}
+var arr = [10]int{}
+
+//数组指针
+var data *[10]int = &arr
+
+var count = 0
 
 func main() {
-
-	fmt.Println("你好吗")
-
-	//res := letcode.Divide(434, 423)
-	//fmt.Println(res)
-	//
-	//headNode := &ListNode{}
-	//
-	//listData := headNode
-	//Insert(1, listData, headNode)
-	//Insert(2, listData, headNode)
-	//Insert(4, listData, headNode)
-	//
-	//res := Find(2, listData)
-	//fmt.Println(res)
-	//var arr = []*ListNode{}
-	//_ = arr
-	//arr = append(arr, listData)
-
+	var arr = []int{11, 3, 100, 5, 6, 7, 8, 9, 4}
+	fmt.Println(data)
+	//MaxHeap(arr, len(arr))
+	HeapSort(arr, len(arr))
+	fmt.Println(data)
 }
 
-func MergeKLists(lists []*ListNode) *ListNode {
-	headNode := &ListNode{}
-	listData := headNode
+// HeapSort 原地堆排序
+func HeapSort(arrData []int, n int) {
 
-	fmt.Println("+++++++++++++++")
+	//var data *[100]int = &arr
 
-	return listData
-}
-
-//删除节点
-func Delete(value int, list *ListNode) {
-	pPrev := FindPrevious(value, list)
-	_ = pPrev
-	p := Find(value, list)
-	pPrev = p.Next
-	p = nil
-}
-
-// FindPrevious ...
-func FindPrevious(value int, list *ListNode) *ListNode {
-	p := list
-	for p.Next != nil && p.Next.Val != value {
-		p = p.Next
+	for i := 0; i < n; i++ {
+		data[i] = arrData[i]
 	}
-	return p
-}
-
-// 找出链表里面的（不安全）
-func Find(value int, list *ListNode) *ListNode {
-
-	p := list
-	for p.Val != value {
-		p = p.Next
+	count = n
+	// 先把数组转变成一个大顶堆
+	for i := (n - 1) / 2; i >= 0; i-- {
+		ShiftDownNew(i)
 	}
-	return p
+	for i := n - 1; i > 0; i-- {
+		SwapArr(0, i)
+		ShiftDownNew(i)
+
+		fmt.Println(data[0])
+	}
 
 }
 
-// 测试是否为最后节点 ...
-func IsLast(list *ListNode) bool {
-	return list.Next == nil
-}
-
-// 测试链表是否为空 ...
-func isEmpty(list *ListNode) bool {
-	return list == nil
-}
-
-// 打印链表 ...
-func PrintList(list *ListNode) {
-
-	if list.Next != nil {
-		fmt.Println(list.Val)
-		PrintList(list.Next)
-	} else {
-		fmt.Println(list.Val)
+// ShiftDownNew ...
+func ShiftDownNew(k int) {
+	for {
+		if 2*k+1 >= count {
+			break
+		}
+		j := 2*k + 1
+		if j+1 < count && data[j+1] > data[j] {
+			j += 1
+		}
+		if data[k] >= data[j] {
+			break
+		}
+		SwapArr(j, k)
+		k = j
 	}
 }
 
-// 合并两个有序的单链表 ...
-func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	if l1 == nil {
-		return l2
+// MaxHeap 将一个数组转换成大顶堆
+func MaxHeap(arrData []int, n int) {
+	//var data *[100]int = &arr
+
+	for i := 0; i < n; i++ {
+		data[i+1] = arrData[i]
 	}
-	if l2 == nil {
-		return l1
+	count = n
+	for i := count / 2; i >= 1; i-- {
+		ShiftDown(i)
 	}
-	var res *ListNode
-	if l1.Val >= l2.Val {
-		res = l2
-		res.Next = MergeTwoLists(l1, l2.Next)
-	} else {
-		res = l1
-		res.Next = MergeTwoLists(l1.Next, l2)
-	}
-	return res
+
 }
 
-// 插入节点 头插法
-func Insert(value int, list *ListNode, position *ListNode) {
-	tempCell := new(ListNode)
-	//fmt.Println("++++", tempCell)
-	if tempCell == nil {
-		fmt.Println("out of space!")
+// ExtractMax 从堆中取出一个值
+func ExtractMax() int {
+	if count <= 0 {
+		return 0
 	}
-	tempCell.Val = value
-	tempCell.Next = position.Next
-	position.Next = tempCell
+	ret := data[1]
+	SwapArr(1, count)
+	count--
+	ShiftDown(1)
+	return ret
+}
+
+// ShiftDown ...
+func ShiftDown(k int) {
+	for {
+		if 2*k > count {
+			break
+		}
+		j := 2 * k
+		if j+1 <= count && data[j+1] > data[j] {
+			j += 1
+		}
+		if data[k] >= data[j] {
+			break
+		}
+		SwapArr(j, k)
+		k = j
+	}
+}
+
+// Insert ...
+func Insert(item int) {
+	data[count+1] = item
+	count++
+	shiftUp(count)
+}
+
+// shiftUp ...
+func shiftUp(k int) {
+	for {
+		if k <= 1 || data[k/2] >= data[k] {
+			break
+		}
+		SwapArr(k/2, k)
+		k = k / 2
+	}
+}
+
+// SwapArr ...
+func SwapArr(j int, i int) {
+	t := data[j]
+	arr[j] = arr[i]
+	arr[i] = t
 }
