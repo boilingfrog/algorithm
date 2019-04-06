@@ -1,4 +1,6 @@
-package main
+package other
+
+import "fmt"
 
 import (
 	"fmt"
@@ -14,33 +16,29 @@ type List struct {
 
 func main() {
 
-	fmt.Println("你好吗")
-
 	//res := letcode.Divide(434, 423)
 	//fmt.Println(res)
-	//
-	//headNode := &ListNode{}
-	//
-	//listData := headNode
-	//Insert(1, listData, headNode)
-	//Insert(2, listData, headNode)
-	//Insert(4, listData, headNode)
-	//
-	//res := Find(2, listData)
-	//fmt.Println(res)
-	//var arr = []*ListNode{}
-	//_ = arr
-	//arr = append(arr, listData)
 
-}
-
-func MergeKLists(lists []*ListNode) *ListNode {
 	headNode := &ListNode{}
+
 	listData := headNode
+	Insert(1, listData, headNode)
+	Insert(2, listData, headNode)
+	Insert(4, listData, headNode)
 
-	fmt.Println("+++++++++++++++")
+	res := Find(2, listData)
+	fmt.Println(res)
 
-	return listData
+	//listData2 := headNode
+	//
+	//Insert(4, listData2, headNode)
+	//Insert(3, listData2, headNode)
+	//Insert(2, listData2, headNode)
+
+	//PrintList(listData)
+
+	//res := MergeTwoLists(listData, listData2)
+	//fmt.Println(res)
 }
 
 //删除节点
