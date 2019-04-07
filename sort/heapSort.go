@@ -4,28 +4,55 @@ import (
 	"fmt"
 )
 
-var arr = [100]int{}
+var arr = [9]int{}
 
 //数组指针
-var data *[100]int = &arr
+var data *[9]int = &arr
 
 var count = 0
 
 func main() {
-	//Insert(2)
-	//Insert(3)
-	//Insert(5)
-	//Insert(7)
-	//Insert(89)
-	//Insert(9)
-	//Insert(8)
-	//Insert(4)
-
-	var arr = []int{2, 3, 4, 5, 6, 7, 8, 9, 4}
-
-	MaxHeap(arr, len(arr))
-
+	var arr = []int{11, 3, 100, 5, 6, 7, 8, 9, 4}
 	fmt.Println(data)
+	//MaxHeap(arr, len(arr))
+	HeapSort(arr, len(arr))
+	fmt.Println(data)
+}
+
+// HeapSort 原地堆排序
+func HeapSort(arrData []int, n int) {
+	for i := 0; i < n; i++ {
+		data[i] = arrData[i]
+	}
+	count = n
+	// 先把数组转变成一个大顶堆
+	for i := (n - 1) / 2; i >= 0; i-- {
+		ShiftDownNew(i)
+	}
+	// 顶位末位互换
+	for i := n - 1; i > 0; i-- {
+		SwapArr(0, i)
+		count--
+		ShiftDownNew(0)
+	}
+}
+
+// ShiftDownNew ...
+func ShiftDownNew(k int) {
+	for {
+		if 2*k+1 >= count {
+			break
+		}
+		j := 2*k + 1
+		if j+1 < count && data[j+1] > data[j] {
+			j += 1
+		}
+		if data[k] >= data[j] {
+			break
+		}
+		SwapArr(j, k)
+		k = j
+	}
 }
 
 // MaxHeap 将一个数组转换成大顶堆
@@ -93,6 +120,6 @@ func shiftUp(k int) {
 // SwapArr ...
 func SwapArr(j int, i int) {
 	t := data[j]
-	arr[j] = arr[i]
-	arr[i] = t
+	data[j] = data[i]
+	data[i] = t
 }

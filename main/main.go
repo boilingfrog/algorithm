@@ -4,10 +4,10 @@ import (
 	"fmt"
 )
 
-var arr = [10]int{}
+var arr = [9]int{}
 
 //数组指针
-var data *[10]int = &arr
+var data *[9]int = &arr
 
 var count = 0
 
@@ -21,9 +21,6 @@ func main() {
 
 // HeapSort 原地堆排序
 func HeapSort(arrData []int, n int) {
-
-	//var data *[100]int = &arr
-
 	for i := 0; i < n; i++ {
 		data[i] = arrData[i]
 	}
@@ -32,13 +29,12 @@ func HeapSort(arrData []int, n int) {
 	for i := (n - 1) / 2; i >= 0; i-- {
 		ShiftDownNew(i)
 	}
+	// 顶位末位互换
 	for i := n - 1; i > 0; i-- {
 		SwapArr(0, i)
-		ShiftDownNew(i)
-
-		fmt.Println(data[0])
+		count--
+		ShiftDownNew(0)
 	}
-
 }
 
 // ShiftDownNew ...
@@ -124,6 +120,6 @@ func shiftUp(k int) {
 // SwapArr ...
 func SwapArr(j int, i int) {
 	t := data[j]
-	arr[j] = arr[i]
-	arr[i] = t
+	data[j] = data[i]
+	data[i] = t
 }
