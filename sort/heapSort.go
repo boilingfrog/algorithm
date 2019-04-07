@@ -27,18 +27,18 @@ func HeapSort(arrData []int, n int) {
 	count = n
 	// 先把数组转变成一个大顶堆
 	for i := (n - 1) / 2; i >= 0; i-- {
-		ShiftDownNew(i)
+		ShiftDownHeap(i)
 	}
 	// 顶位末位互换
 	for i := n - 1; i > 0; i-- {
 		SwapArr(0, i)
 		count--
-		ShiftDownNew(0)
+		ShiftDownHeap(0)
 	}
 }
 
-// ShiftDownNew ...
-func ShiftDownNew(k int) {
+// ShiftDownHeap ...
+func ShiftDownHeap(k int) {
 	for {
 		if 2*k+1 >= count {
 			break
