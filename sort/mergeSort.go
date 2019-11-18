@@ -18,4 +18,3 @@ func mergeSort(arr []int, l int, r int) {
 		Merge(arr, l, mid, r)
 	}
 }
-
