@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"algorithm/letcode"
+	"fmt"
+)
 
 type ListNode struct {
 	Val  int
@@ -36,23 +39,29 @@ func main() {
 	//fmt.Println(cur)
 	//PrintList(listData.Next)
 
+	var arr = []int{
+		1, 8, 6, 2, 5, 4, 8, 3, 7,
+	}
+
+	fmt.Println(letcode.MaxArea(arr))
+
 }
 
 // 尝试下计算容器的水量
-
-func MaxArray(data []int) {
-
-	var (
-		nowFlg   = sumData(data[1], data[0])
-		rightFlg = sumData(data[1], data[0])
-	)
-
-	for i := 2; i < len(data); i++ {
-
-		rightFlg += data[0]
-	}
-
-}
+//
+//func MaxArray(data []int) {
+//
+//	var (
+//		nowFlg   = sumData(data[1], data[0])
+//		rightFlg = sumData(data[1], data[0])
+//	)
+//
+//	for i := 2; i < len(data); i++ {
+//
+//		rightFlg += data[0]
+//	}
+//
+//}
 
 func sumData(data1, data2 int) (sum int) {
 	sum = data1 - data2
@@ -77,7 +86,7 @@ func MergeKLists(lists []*ListNode) *ListNode {
 			} else {
 				arr = append(arr, lists[i].Val)
 			}
-		}****************************************************************************
+		}
 	}
 
 	fmt.Println(arr)
