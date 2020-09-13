@@ -1,10 +1,6 @@
 package main
 
-import "fmt"
-
 func main() {
-	fmt.Println(212)
-
 	// list
 
 	headNode := &ListNode{}
@@ -14,7 +10,15 @@ func main() {
 	Insert(2, listData, headNode)
 	Insert(4, listData, headNode)
 
+	//PrintList(listData)
+	//
+	//fmt.Println(DoublePointer(listData, 2))
+	//
+	//fmt.Println(isExistLoop(listData))
+
 	PrintList(listData)
 
-	fmt.Println(DoublePointer(listData, 2))
+	// PrintList(ReverseList(listData))
+	PrintList(ReverseListLoop(listData))
+
 }
