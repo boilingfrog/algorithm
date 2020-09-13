@@ -43,7 +43,7 @@ func (o *Ban) visit(ip string) bool {
 	fmt.Printf("名单里有 %s，拒绝访问\n", ip)
 	return true
 }
-func main() {
+func main2() {
 	var success int64 = 0
 	wg := sync.WaitGroup{}
 	ban := new(Ban)
