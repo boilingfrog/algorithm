@@ -1,8 +1,4 @@
-package sort
-
-import (
-	"fmt"
-)
+package main
 
 var arr = [9]int{}
 
@@ -10,14 +6,6 @@ var arr = [9]int{}
 var data *[9]int = &arr
 
 var count = 0
-
-func main() {
-	var arr = []int{11, 3, 100, 5, 6, 7, 8, 9, 4}
-	fmt.Println(data)
-	//MaxHeap(arr, len(arr))
-	HeapSort(arr, len(arr))
-	fmt.Println(data)
-}
 
 // HeapSort 原地堆排序
 func HeapSort(arrData []int, n int) {

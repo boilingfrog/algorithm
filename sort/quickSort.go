@@ -1,4 +1,4 @@
-package sort
+package main
 
 import "fmt"
 
@@ -29,14 +29,14 @@ func partition(arr []int, l int, r int) int {
 	for i := l + 1; i <= r; i++ {
 		if arr[i] < v {
 			Swap(arr, j+1, i)
-			t:=arr[j+1]
-			arr[j+1]=arr[i]
-			arr[i]=t
+			t := arr[j+1]
+			arr[j+1] = arr[i]
+			arr[i] = t
 			j++
 		}
 	}
-	t:=arr[l]
-	arr[l]=arr[j]
-	arr[j]=t
+	t := arr[l]
+	arr[l] = arr[j]
+	arr[j] = t
 	return 1
 }

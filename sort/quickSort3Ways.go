@@ -1,4 +1,4 @@
-package sort
+package main
 
 import "fmt"
 
@@ -25,12 +25,11 @@ func quickSort3Ways(arr []int, l int, r int) {
 	// 随机生成一个数作为标定点，定为3
 	Swap(arr, l, 5)
 
-
 	for {
 		if i >= gt {
 			break
 		}
-		fmt.Println(i-gt)
+		fmt.Println(i - gt)
 		if arr[i] < v {
 			Swap(arr, l, i+1)
 			lt++
@@ -44,7 +43,7 @@ func quickSort3Ways(arr []int, l int, r int) {
 	}
 
 	Swap(arr, l, lt)
-	quickSort3Ways(arr,l,lt-1)
-	quickSort3Ways(arr,gt,r)
+	quickSort3Ways(arr, l, lt-1)
+	quickSort3Ways(arr, gt, r)
 
 }
