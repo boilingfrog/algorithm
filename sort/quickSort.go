@@ -18,6 +18,7 @@ func quickSort(arr []int, l int, r int) {
 	}
 
 	p := partition(arr, l, r)
+	fmt.Println(p)
 	quickSort(arr, l, p-1)
 	quickSort(arr, p+1, r)
 }
@@ -38,5 +39,5 @@ func partition(arr []int, l int, r int) int {
 	t := arr[l]
 	arr[l] = arr[j]
 	arr[j] = t
-	return 1
+	return j + 1
 }
