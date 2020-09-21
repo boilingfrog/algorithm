@@ -1,4 +1,4 @@
-package letcode
+package main
 
 /*链表*/
 type Object interface{}
