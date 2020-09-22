@@ -31,6 +31,21 @@ import (
 // ""wobgrovw""
 // abcabcbb
 
+/*
+
+作者：Mono_Chrome
+链接：https://www.nowcoder.com/discuss/357566?type=1
+来源：牛客网
+
+题目：给定m个不重复的字符 [a, b, c, d]，以及一个长度为n的字符串tbcacbdata，问能否在这个字符串中找到一个长度为m的连续子串，使得这个子串刚
+好由上面m个字符组成，顺序无所谓，返回任意满足条件的一个子串的起始位置，未找到返回-1。比如上面这个例子，acbd，3。
+
+*/
+func lengthOfLongestSubstring2(s string) int {
+
+	return 1
+}
+
 func Max(i, j int) int {
 	if i < j {
 		return j

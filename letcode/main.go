@@ -1,9 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	fmt.Println(twoSum([]int{3, 2, 4}, 6))
+	fmt.Println(minSubArrayLen(7, []int{2, 3, 1, 2, 4, 3}))
 
 }
