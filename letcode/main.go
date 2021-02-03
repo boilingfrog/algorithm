@@ -6,6 +6,9 @@ import (
 
 func main() {
 
-	fmt.Println(minSubArrayLen(7, []int{2, 3, 1, 2, 4, 3}))
+	fmt.Println(transpose([][]int{
+		[]int{1, 2, 3},
+		[]int{4, 5, 6},
+	}))
 
 }
