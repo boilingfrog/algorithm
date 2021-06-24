@@ -1,4 +1,4 @@
-package main
+package letcode
 
 /**
  * Definition for singly-linked list.

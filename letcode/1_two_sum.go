@@ -1,4 +1,4 @@
-package main
+package letcode
 
 func twoSum(nums []int, target int) []int {
 

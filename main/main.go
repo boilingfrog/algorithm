@@ -1,7 +1,6 @@
 package main
 
 import (
-	"algorithm/letcode"
 	"fmt"
 )
 
@@ -37,13 +36,7 @@ func main() {
 	fmt.Println(cur)
 	MergeKLists(cur)
 	//fmt.Println(cur)
-	//PrintList(listData.Next)
-
-	var arr = []int{
-		1, 8, 6, 2, 5, 4, 8, 3, 7,
-	}
-
-	fmt.Println(letcode.MaxArea(arr))
+	//PrintList(listData.Next
 
 }
 
