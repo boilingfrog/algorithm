@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69ee7097-fe52-4b2e-8b10-c1d11575e1a0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/letcode/39_next_permutation.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/11_max_area.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/11_max_area.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/12_int_to_roman.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/12_int_to_roman.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/134_can_complete_circuit.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/134_can_complete_circuit.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/15_there_sum.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/15_there_sum.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/1_two_sum.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/1_two_sum.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/209_min_sub_array_len.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/209_min_sub_array_len.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/21_merge_two_lists.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/21_merge_two_lists.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/23_merge_k_lists.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/23_merge_k_lists.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/29_divide.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/29_divide.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/2_two_sum_list.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/2_two_sum_list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/34_search_range.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/34_search_range.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/3_length_of_longest_substring.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/3_length_of_longest_substring.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/4_find_median_sorted_arrays.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/4_find_median_sorted_arrays.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/5_longest_palindrome.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/5_longest_palindrome.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/867_transpose.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/867_transpose.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/88_merge.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/88_merge.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/get_long.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/get_long.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/list.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/list.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/search_matrix.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/search_matrix.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/letcode/triangle.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/triangle.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/letcode/39_next_permutation.go" beforeDir="false" afterPath="$PROJECT_DIR$/letcode/39_next_permutation.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +17,18 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" path="/usr/local/Cellar/go/1.16.4/libexec" />
+  <component name="GOROOT" path="/usr/local/go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+    <option name="urls">
+      <list>
+        <option value="file://$PROJECT_DIR$/../.." />
+      </list>
+    </option>
+    <option name="useGoPathFromSystemEnvironment" value="false" />
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="kubernetes-admin@cluster.local" />
@@ -59,9 +44,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
-    <property name="configurable.Module.GOPATH.is.expanded" value="false" />
+    <property name="configurable.Module.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
@@ -69,7 +55,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -115,8 +101,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build algorithm/letcode" />
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build algorithm/letcode" />
       </list>
     </recent_temporary>
   </component>
@@ -124,34 +110,50 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="letcode" />
+    <option name="LAST_COMMIT_MESSAGE" value="letcode" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="430" y="370" key="#GOROOT" timestamp="1624494686151">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="430" y="370" key="#GOROOT/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624494686151" />
-    <state width="1386" height="207" key="GridCell.Tab.0.bottom" timestamp="1624511072840">
+    <state x="0" y="0" width="1098" height="900" key="CommitChangelistDialog2" timestamp="1624511223261">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1386" height="207" key="GridCell.Tab.0.bottom/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511072840" />
-    <state width="1386" height="207" key="GridCell.Tab.0.center" timestamp="1624511072837">
+    <state x="0" y="0" width="1098" height="900" key="CommitChangelistDialog2/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511223261" />
+    <state width="1386" height="206" key="GridCell.Tab.0.bottom" timestamp="1624538823621">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1386" height="207" key="GridCell.Tab.0.center/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511072837" />
-    <state width="1386" height="207" key="GridCell.Tab.0.left" timestamp="1624511072835">
+    <state width="1386" height="206" key="GridCell.Tab.0.bottom/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624538823621" />
+    <state width="1386" height="206" key="GridCell.Tab.0.center" timestamp="1624538823619">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1386" height="207" key="GridCell.Tab.0.left/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511072835" />
-    <state width="1386" height="207" key="GridCell.Tab.0.right" timestamp="1624511072838">
+    <state width="1386" height="206" key="GridCell.Tab.0.center/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624538823619" />
+    <state width="1386" height="206" key="GridCell.Tab.0.left" timestamp="1624538823617">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1386" height="207" key="GridCell.Tab.0.right/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511072838" />
-    <state x="0" y="0" width="1156" height="900" key="SettingsEditor" timestamp="1624499356863">
+    <state width="1386" height="206" key="GridCell.Tab.0.left/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624538823617" />
+    <state width="1386" height="206" key="GridCell.Tab.0.right" timestamp="1624538823620">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="0" y="0" width="1156" height="900" key="SettingsEditor/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624499356863" />
+    <state width="1386" height="206" key="GridCell.Tab.0.right/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624538823620" />
+    <state x="0" y="0" width="1156" height="900" key="SettingsEditor" timestamp="1624536680965">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="0" y="0" width="1156" height="900" key="SettingsEditor/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624536680965" />
+    <state x="220" y="124" key="Vcs.Push.Dialog.v2" timestamp="1624511230556">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="220" y="124" key="Vcs.Push.Dialog.v2/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624511230556" />
     <state x="339" y="142" width="761" height="616" key="find.popup" timestamp="1624499650027">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="339" y="142" width="761" height="616" key="find.popup/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624499650027" />
+    <state x="301" y="0" width="838" height="1032" key="search.everywhere.popup" timestamp="1624536531042">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="301" y="0" width="838" height="1032" key="search.everywhere.popup/0.0.1440.900/-238.-1080.1920.1080@0.0.1440.900" timestamp="1624536531042" />
   </component>
 </project>
