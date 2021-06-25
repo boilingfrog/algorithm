@@ -1,4 +1,4 @@
-package sort
+package main
 
 import "fmt"
 
@@ -10,33 +10,25 @@ func QuickSort(arr []int, n int) {
 
 }
 
-// 对arr[l.......r]部分进行快速排序
-func quickSort(arr []int, l int, r int) {
-
-	if l >= r {
-		return
+func quickSort(data []int, l, u int) {
+	if l < u {
+		m := partition(data, l, u)
+		quickSort(data, l, m-1)
+		quickSort(data, m, u)
 	}
-
-	p := partition(arr, l, r)
-	quickSort(arr, l, p-1)
-	quickSort(arr, p+1, r)
 }
 
-//返回p使得arr[l...p-1]<arr[p];arr[p+1....r]>arr[p]
-func partition(arr []int, l int, r int) int {
-	v := arr[l]
-	j := l
-	for i := l + 1; i <= r; i++ {
-		if arr[i] < v {
-			Swap(arr, j+1, i)
-			t:=arr[j+1]
-			arr[j+1]=arr[i]
-			arr[i]=t
-			j++
+func partition(data []int, l, u int) int {
+
+	quick := data[l]
+	left := l
+
+	for i := left + 1; i < u; i++ {
+		if data[i] <= quick {
+			left++
+			data[left], data[i] = data[i], data[left]
 		}
 	}
-	t:=arr[l]
-	arr[l]=arr[j]
-	arr[j]=t
-	return 1
+	data[l], data[left] = data[left], data[l]
+	return left + 1
 }

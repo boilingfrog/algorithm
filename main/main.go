@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type ListNode struct {
 	Val  int
@@ -34,8 +36,34 @@ func main() {
 	fmt.Println(cur)
 	MergeKLists(cur)
 	//fmt.Println(cur)
-	//PrintList(listData.Next)
+	//PrintList(listData.Next
 
+}
+
+// 尝试下计算容器的水量
+//
+//func MaxArray(data []int) {
+//
+//	var (
+//		nowFlg   = sumData(data[1], data[0])
+//		rightFlg = sumData(data[1], data[0])
+//	)
+//
+//	for i := 2; i < len(data); i++ {
+//
+//		rightFlg += data[0]
+//	}
+//
+//}
+
+func sumData(data1, data2 int) (sum int) {
+	sum = data1 - data2
+
+	if sum > 0 {
+		return sum
+	}
+
+	return -sum
 }
 
 func MergeKLists(lists []*ListNode) *ListNode {

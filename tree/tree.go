@@ -1,11 +1,11 @@
-package tree
+package main
 
 type Object interface{}
 
 type TreeNode struct {
-	Data       Object
-	LeftChild  *TreeNode
-	RightChild *TreeNode
+	Data  Object
+	Left  *TreeNode
+	Right *TreeNode
 }
 
 //(完全)二叉树结构
@@ -25,17 +25,17 @@ func (this *Tree) Add(object Object) {
 		cur_node := queue[0]
 		queue = queue[1:]
 
-		if cur_node.LeftChild == nil {
-			cur_node.LeftChild = node
+		if cur_node.Left == nil {
+			cur_node.Left = node
 			return
 		} else {
-			queue = append(queue, cur_node.LeftChild)
+			queue = append(queue, cur_node.Left)
 		}
-		if cur_node.RightChild == nil {
-			cur_node.RightChild = node
+		if cur_node.Right == nil {
+			cur_node.Right = node
 			return
 		} else {
-			queue = append(queue, cur_node.RightChild)
+			queue = append(queue, cur_node.Right)
 		}
 	}
 }
@@ -54,11 +54,11 @@ func (this *Tree) BreadthTravel() {
 		cur_node := queue[0]
 		queue = queue[1:]
 
-		if cur_node.LeftChild != nil {
-			queue = append(queue, cur_node.LeftChild)
+		if cur_node.Left != nil {
+			queue = append(queue, cur_node.Left)
 		}
-		if cur_node.RightChild != nil {
-			queue = append(queue, cur_node.RightChild)
+		if cur_node.Right != nil {
+			queue = append(queue, cur_node.Right)
 		}
 	}
 

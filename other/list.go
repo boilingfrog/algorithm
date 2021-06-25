@@ -1,10 +1,6 @@
-package other
+package main
 
 import "fmt"
-
-import (
-	"fmt"
-)
 
 type ListNode struct {
 	Val  int
@@ -14,7 +10,7 @@ type List struct {
 	headNode *ListNode //头节点
 }
 
-func main() {
+func main1() {
 
 	//res := letcode.Divide(434, 423)
 	//fmt.Println(res)
