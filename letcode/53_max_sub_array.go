@@ -1,5 +1,7 @@
 package letcode
 
+import "sort"
+
 /*
 给定一个整数数组 nums，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
@@ -43,12 +45,33 @@ package letcode
 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。
 */
 
-// 贪心
+// 动态规划
+// 若前一个元素大于0，则将其加到当前元素上
+// 计算中所有的可能值，然后找出最大的即可
 func MaxSubArray(nums []int) int {
 	if len(nums) == 1 {
 		return nums[0]
 	}
-	var target, now = 0, 0
+	var targets = make([]int, len(nums))
+	targets[0] = nums[0]
+	for i := 1; i < len(nums); i++ {
+		if targets[i-1] < 0 {
+			targets[i] = nums[i]
+		} else {
+			targets[i] = targets[i-1] + nums[i]
+		}
+	}
+	sort.Ints(targets)
+	return targets[len(nums)-1]
+}
+
+// 贪心
+// 若当前指针所指元素的和小于0，则丢弃当前元素之前的数列
+func MaxSubArray1(nums []int) int {
+	if len(nums) == 1 {
+		return nums[0]
+	}
+	var target, now = nums[0], 0
 	for i := 0; i < len(nums); i++ {
 		now = Max1(nums[i], nums[i]+now)
 		target = Max1(now, target)

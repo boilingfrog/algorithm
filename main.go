@@ -8,6 +8,6 @@ import (
 func main() {
 
 	fmt.Println(letcode.MaxSubArray([]int{
-		-1,
+		-2, -1,
 	}))
 }
