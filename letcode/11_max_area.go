@@ -40,10 +40,36 @@ package letcode
 n = height.length
 2 <= n <= 3 * 104
 0 <= height[i] <= 3 * 104
+
+解题思路
+
+
+使用双指针法，从两端移动，因为蓄水量最大满足两个条件
+
+1、两端的值最大
+2、相隔的具体最长
+
+所以指针从两边开始，每次计算一次，然后移动最小边，每次移动计算一次，和之前的值进行比较
+
+保留最大的值，就是最后的答案
 */
 
 func MaxArea(height []int) int {
+	var left, right, max = 0, len(height) - 1, 0
 
-	return 0
+	for left <= right {
+		if height[left] > height[right] {
+			if (right-left)*height[right] > max {
+				max = (right - left) * height[right]
+			}
+			right--
+		} else {
+			if (right-left)*height[left] > max {
+				max = (right - left) * height[left]
+			}
+			left++
+		}
+	}
 
+	return max
 }
