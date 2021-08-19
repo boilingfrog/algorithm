@@ -1,5 +1,7 @@
 package letcode
 
+import "fmt"
+
 /*
 地址：https://leetcode-cn.com/problems/linked-list-cycle-ii/
 
@@ -23,7 +25,69 @@ package letcode
 输入：head = [1,2], pos = 0
 输出：返回索引为 0 的链表节点
 */
-func detectCycle(head *ListNode) *ListNode {
 
+// 具体的题解参考https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode-solution/
+func detectCycle(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil || head.Next.Next == nil {
+		return nil
+	}
+
+	slow := head
+	quick := head.Next.Next
+
+	for {
+		if quick == nil || quick.Next == nil {
+			return nil
+		}
+		if quick == slow {
+			slow1 := head
+			for slow1 != slow {
+				slow1 = slow1.Next
+				slow = slow.Next
+				fmt.Println(slow1, slow)
+			}
+			return slow1
+		}
+		slow = slow.Next
+		quick = quick.Next
+		if quick != nil && quick.Next != nil {
+			quick = quick.Next
+		}
+	}
+}
+
+func detectCycle2(head *ListNode) *ListNode {
+	slow, fast := head, head
+	for fast != nil {
+		slow = slow.Next
+		if fast.Next == nil {
+			return nil
+		}
+		fast = fast.Next.Next
+		if fast == slow {
+			p := head
+			for p != slow {
+				p = p.Next
+				slow = slow.Next
+			}
+			return p
+		}
+	}
 	return nil
+}
+
+// 便利报错的map中，如果map中有重复，返回即可
+func detectCycle1(head *ListNode) *ListNode {
+	list := head
+	var cacheMap = make(map[*ListNode]int)
+	for {
+		if list == nil || list.Next == nil {
+			return nil
+		}
+		if _, ok := cacheMap[list]; ok {
+			return list
+		}
+		cacheMap[list] = list.Val
+		list = list.Next
+	}
 }
