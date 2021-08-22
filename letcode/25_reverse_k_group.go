@@ -1,5 +1,7 @@
 package letcode
 
+import "fmt"
+
 // 题目连接 https://leetcode-cn.com/problems/reverse-nodes-in-k-group/
 
 /*
@@ -26,28 +28,62 @@ k是一个正整数，它的值小于或等于链表的长度。
 输出：[3,2,1,4,5]
 */
 
+// 思路
+// k个一组进行倒排
+// 1、k个一组进行倒叙排，放到一个新的list中
+// 2、尾插法将排好的插入存储结果的list中，置空上面倒排的list
+// 3、如果不满足k，直接尾插到存储结果的list中
+
+// 主要用到了，链表的头插法和尾插法
+// 头插法实现倒排
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	if k <= 1 {
 		return head
 	}
 	i := 0
 	var newList = &ListNode{Val: 0}
+	first := ListNode{Val: 0}
+	tmp := &first
+	now := head
+
+	t := 0
 	for {
 		if head == nil {
-			return newList.Next
+			return first.Next
 		}
+		if now != nil {
+			now = now.Next
+			t++
+		}
+
 		i++
 		if i == k {
 			for m := 0; m < k; m++ {
+				i--
 				if head == nil {
-					return newList.Next
+					return first.Next
 				}
-				node := head
-				head = head.Next
-				node.Next = newList.Next
-				newList.Next = node
+				fmt.Println(t)
+				if t == k {
+					node := head
+					head = head.Next
+					node.Next = newList.Next
+					newList.Next = node
+				} else {
+					tmp.Next = head
+					tmp = head
+					head = head.Next
+				}
 			}
-			i = 0
+			t = 0
+			for {
+				if newList.Next == nil {
+					break
+				}
+				tmp.Next = newList.Next
+				tmp = newList.Next
+				newList = newList.Next
+			}
 		}
 	}
 }
