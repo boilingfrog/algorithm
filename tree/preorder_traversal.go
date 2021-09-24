@@ -30,10 +30,10 @@ package main
  */
 
 // 递归
-func preorderTraversal(root *TreeNode) []int {
-	var res []int
+func preorderTraversal(root *TreeNode) []Object {
+	var res []Object
 	if root != nil {
-		res = append(res, root.Val)
+		res = append(res, root.Data)
 		res = append(res, preorderTraversal(root.Left)...)
 		res = append(res, preorderTraversal(root.Right)...)
 	}
@@ -51,8 +51,8 @@ func preorderTraversal(root *TreeNode) []int {
  * }
  */
 
-func preorderTraversal1(root *TreeNode) []int {
-	res := []int{}
+func preorderTraversal1(root *TreeNode) []Object {
+	res := []Object{}
 	if root == nil {
 		return res
 	}
@@ -61,7 +61,7 @@ func preorderTraversal1(root *TreeNode) []int {
 	for len(stack) > 0 {
 		node := stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
-		res = append(res, node.Val)
+		res = append(res, node.Data)
 
 		if node.Right != nil {
 			stack = append(stack, node.Right)

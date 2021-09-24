@@ -64,7 +64,7 @@ func tree(a, b *TreeNode) bool {
 		return true
 	}
 
-	if (a != nil && b == nil) || (a == nil && b != nil) || (a.Val != b.Val) {
+	if (a != nil && b == nil) || (a == nil && b != nil) || (a.Data != b.Data) {
 		return false
 	}
 
