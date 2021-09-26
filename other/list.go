@@ -12,7 +12,7 @@ type List struct {
 
 func main1() {
 
-	//res := letcode.Divide(434, 423)
+	//res := leetcode.Divide(434, 423)
 	//fmt.Println(res)
 
 	headNode := &ListNode{}

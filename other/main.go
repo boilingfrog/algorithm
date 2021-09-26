@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 
 	// list
@@ -19,12 +17,6 @@ func main() {
 		temp.Next = &stu
 		temp = &stu
 	}
-
-	PrintList(&head)
-
-	fmt.Println(DoublePointer(listData, 2))
-
-	fmt.Println(isExistLoop(listData))
 
 }
 

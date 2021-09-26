@@ -1,10 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
 
-	//fmt.Println(letcode.SearchMatrix([][]int{
+	//fmt.Println(leetcode.SearchMatrix([][]int{
 	//	{-5},
 	//}, -10))
 
@@ -21,4 +23,15 @@ func test(n int) [][]int {
 		}
 	}
 	return sil
+}
+
+func sum(n, m int) int {
+	sum := 0
+	for i := 0; i < n; i++ {
+		if m == n {
+			return sum
+		}
+		sum += i * 2
+	}
+	return sum
 }
