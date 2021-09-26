@@ -1,24 +1,28 @@
 package main
 
+import "algorithm/letcode"
+
 func main() {
+
+	letcode.IsValid("()")
+
 	// list
-
-	headNode := &ListNode{}
-
-	listData := headNode
-	Insert(1, listData, headNode)
-	Insert(2, listData, headNode)
-
-	// 尾插法
-	head := ListNode{}
-	temp := &head
-	for i := 1; i < 10; i++ {
-		stu := ListNode{Val: i}
-		temp.Next = &stu
-		temp = &stu
-	}
-
-	PrintList(&head)
+	//headNode := &ListNode{}
+	//
+	//listData := headNode
+	//Insert(1, listData, headNode)
+	//Insert(2, listData, headNode)
+	//
+	//// 尾插法
+	//head := ListNode{}
+	//temp := &head
+	//for i := 1; i < 10; i++ {
+	//	stu := ListNode{Val: i}
+	//	temp.Next = &stu
+	//	temp = &stu
+	//}
+	//
+	//PrintList(&head)
 	//
 	//fmt.Println(DoublePointer(listData, 2))
 	//
