@@ -1,7 +1,5 @@
 package leetcode
 
-import "fmt"
-
 /*
 224. 基本计算器
 
@@ -71,7 +69,6 @@ func calculate(s string) (ans int) {
 		default:
 			num := 0
 			for ; i < n && '0' <= s[i] && s[i] <= '9'; i++ {
-				fmt.Println("")
 				num = num*10 + int(s[i]-'0')
 			}
 			ans += sign * num
