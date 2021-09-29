@@ -23,7 +23,7 @@ func partition(data []int, l, u int) int {
 	quick := data[l]
 	left := l
 
-	for i := left + 1; i < u; i++ {
+	for i := l + 1; i <= u; i++ {
 		if data[i] <= quick {
 			left++
 			data[left], data[i] = data[i], data[left]
