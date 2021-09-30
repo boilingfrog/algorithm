@@ -14,10 +14,7 @@ func QuickSort3Ways(arr []int, n int) {
 }
 
 func quickSort3Ways(arr []int, lo, hi int) {
-	if len(arr) < 2 {
-		return
-	}
-	if lo == hi {
+	if len(arr) < 2 || lo == hi {
 		return
 	}
 
