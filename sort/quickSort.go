@@ -19,7 +19,6 @@ func quickSort(data []int, l, u int) {
 }
 
 func partition(data []int, l, u int) int {
-
 	quick := data[l]
 	left := l
 
