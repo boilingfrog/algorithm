@@ -7,7 +7,7 @@ func main() {
 
 	// 快排
 	//QuickSort(arr, 9)
-	bucketSort(ar)
+	countingSort(ar)
 	fmt.Println(ar)
 }
 
