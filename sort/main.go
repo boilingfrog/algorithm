@@ -10,7 +10,7 @@ func main() {
 	//countingSort(ar)
 	//fmt.Println(ar)
 
-	fmt.Println(bsearch(ar, 99))
+	fmt.Println(bsearch(ar, 2))
 }
 
 // 来个冒泡玩一下
