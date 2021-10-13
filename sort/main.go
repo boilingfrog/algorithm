@@ -10,7 +10,7 @@ func main() {
 	//countingSort(ar)
 	//fmt.Println(ar)
 
-	fmt.Println(bsearchGreaterOrEqual(ar, 4))
+	fmt.Println(bsearchLessEqual(ar, 4))
 }
 
 // 来个冒泡玩一下
