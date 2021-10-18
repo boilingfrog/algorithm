@@ -15,10 +15,6 @@ package main
 
 输出: [1,2,3]
 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
-
-来源：力扣（LeetCode）
-链接：https://leetcode-cn.com/problems/binary-tree-preorder-traversal
-著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
 /**
  * Definition for a binary tree node.
@@ -70,7 +66,6 @@ func preorderTraversal1(root *TreeNode) []Object {
 		if node.Left != nil {
 			stack = append(stack, node.Left)
 		}
-
 	}
 
 	return res
