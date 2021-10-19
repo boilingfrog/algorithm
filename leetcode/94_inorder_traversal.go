@@ -64,21 +64,23 @@ func inorderTraversal(root *TreeNode) []int {
 }
 
 // 使用迭代
+// 这次的迭代又没有写出来，好气
+// 梳理下原因 因为迭代使用的栈进行处理，如何巧妙的出入栈这块刚开始没想明白，看了答案豁然开朗，实在是妙
 func inorderTraversalIteration(root *TreeNode) []int {
 	if root == nil {
 		return []int{}
 	}
 	var res []int
-	stack := []*TreeNode{}
+	var stack []*TreeNode
 	for root != nil || len(stack) > 0 {
 		for root != nil {
 			stack = append(stack, root)
 			root = root.Left
 		}
-		root = stack[len(stack)-1]
+		node := stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
-		res = append(res, root.Val)
-		root = root.Right
+		res = append(res, node.Val)
+		root = node.Right
 	}
 
 	return res
