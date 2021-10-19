@@ -28,9 +28,3 @@ func partition(source []int, l, u int) int { //划分
 	source[l], source[left] = source[left], source[l]
 	return left + 1
 }
-
-func main() {
-	s := []int{3, 6, 7, 4, 2, 5}
-	quickSort(s, 0, len(s))
-	fmt.Println(s)
-}
