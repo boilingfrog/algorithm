@@ -1,4 +1,4 @@
-package main
+package leetcode
 
 /*
 
@@ -45,6 +45,7 @@ package main
  *     Right *TreeNode
  * }
  */
+
 func isSymmetric(root *TreeNode) bool {
 
 	if root == nil {
@@ -64,7 +65,7 @@ func tree(a, b *TreeNode) bool {
 		return true
 	}
 
-	if (a != nil && b == nil) || (a == nil && b != nil) || (a.Data != b.Data) {
+	if (a != nil && b == nil) || (a == nil && b != nil) || (a.Val != b.Val) {
 		return false
 	}
 
