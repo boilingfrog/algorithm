@@ -133,6 +133,19 @@ func Max(root *Node) (int, bool) {
 	return max, true
 }
 
+// 中序遍历
+// 使用递归
+// 中序遍历对搜索二叉树来说，输出的结果是从小到大排好序的
+func inorderTraversal(root *Node) []int {
+	var res []int
+	if root != nil {
+		res = append(res, inorderTraversal(root.left)...)
+		res = append(res, root.value)
+		res = append(res, inorderTraversal(root.right)...)
+	}
+	return res
+}
+
 func main() {
 	// 头结点
 	bst := &Node{
@@ -157,5 +170,8 @@ func main() {
 	fmt.Println("-----------")
 	fmt.Print("最大值：")
 	fmt.Println(Max(bst))
+	fmt.Println("-----------")
+	fmt.Print("中序遍历：")
+	fmt.Println(inorderTraversal(bst))
 	fmt.Println("-----------")
 }
