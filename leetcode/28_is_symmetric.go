@@ -46,7 +46,7 @@ package leetcode
  * }
  */
 
-func isSymmetric(root *TreeNode) bool {
+func isSymmetric1(root *TreeNode) bool {
 
 	if root == nil {
 		return true
