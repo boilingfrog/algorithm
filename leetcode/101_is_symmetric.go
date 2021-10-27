@@ -67,3 +67,39 @@ func compaire(left *TreeNode, right *TreeNode) bool {
 
 	return (left.Val == right.Val) && compaire(left.Left, right.Right) && compaire(left.Right, right.Left)
 }
+
+// 使用迭代去做
+func isSymmetricD(root *TreeNode) bool {
+	if root == nil {
+		return false
+	}
+	leftQ := []*TreeNode{root.Left}
+	rightQ := []*TreeNode{root.Right}
+
+	for len(leftQ) > 0 || len(rightQ) > 0 {
+		if len(leftQ) != len(rightQ) {
+			return false
+		}
+		left := leftQ[len(leftQ)-1]
+		right := rightQ[len(rightQ)-1]
+
+		leftQ = leftQ[:len(leftQ)-1]
+		rightQ = rightQ[:len(rightQ)-1]
+
+		if right == nil && left == nil {
+			continue
+		}
+		if left == nil || right == nil {
+			return false
+		}
+		if left.Val != right.Val {
+			return false
+		}
+		leftQ = append(leftQ, left.Left)
+		leftQ = append(leftQ, left.Right)
+
+		rightQ = append(rightQ, right.Right)
+		rightQ = append(rightQ, right.Left)
+	}
+	return true
+}
