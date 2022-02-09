@@ -63,6 +63,7 @@ n == matrix[i].length
 
 应该也行不行但是要考虑的情况比较多
 
+害又做了一次，又想成左上角开始了，罪孽啊
 */
 
 func SearchMatrix(matrix [][]int, target int) bool {
