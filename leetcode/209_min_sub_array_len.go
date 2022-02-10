@@ -15,9 +15,19 @@ package leetcode
 进阶：
 
 如果你已经完成了 O(n) 时间复杂度的解法, 请尝试 O(n log n) 时间复杂度的解法。
+
+思路
+
+过了几个月重新做了一次还是不会，害，尴尬
+
+总结下思路
+
+刚开始的思路也想到了双指针，一个左节点一个又节点一起移动，想的是右边节点移动，如果右边节点遇到比当前遇到的值，都要大的值之后，然后左边节点移动，是个错误的想法。。。。。
+
+
+答案很好，如果和没有达到目标值，右边节点移动，如果达到了，记录下当前的两数间隔，然后移动左节点，依次循环。。。  实在是秒啊
 */
 func minSubArrayLen(s int, nums []int) int {
-
 	if len(nums) == 0 {
 		return 0
 	}
@@ -46,7 +56,6 @@ func minSubArrayLen(s int, nums []int) int {
 				if num > (right - left) {
 					num = right - left
 				}
-
 			}
 		}
 	}
