@@ -1,5 +1,7 @@
 package leetcode
 
+import "sort"
+
 /*
 给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的 连续 子数组，并返回其长度。如果不存在符合条件的子数组，返回 0。
 
@@ -61,4 +63,39 @@ func minSubArrayLen(s int, nums []int) int {
 	}
 
 	return num
+}
+
+func minSubArrayLenBinary(target int, nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
+	// 计算当前节点之前所有节点的和
+	// 这里使用了定义n+1,也就是在计算节点之前放置一个0，方便原来第一个节点的比较
+	numsTarget := make([]int, n+1)
+	for i := 1; i <= n; i++ {
+		numsTarget[i] = numsTarget[i-1] + nums[i-1]
+	}
+
+	res := 0
+	for i := 1; i < n+1; i++ {
+		// 找出大于当前节点+target的数，在计算数组numsTarget出现的第一个位置，这个位置减去当前节点的下标就是，我们需要的范围值
+		targetData := numsTarget[i-1] + target
+		bound := sort.SearchInts(numsTarget, targetData)
+
+		if bound == 0 || bound == len(numsTarget) {
+			continue
+		}
+		// 找出最小的
+		if bound > 0 {
+			bound = bound - (i - 1)
+			if res == 0 {
+				res = bound
+			} else if bound < res {
+				res = bound
+			}
+		}
+	}
+
+	return res
 }
