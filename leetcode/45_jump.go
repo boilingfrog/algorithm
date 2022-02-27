@@ -27,24 +27,52 @@ package leetcode
 链接：https://leetcode-cn.com/problems/jump-game-ii
 */
 
+/*
+思路
+
+在每次可跳动的范围内找出，能跳动的最大值，然后到了最大可跳动的值，增加跳动的步骤
+*/
 func jump(nums []int) int {
-	length := len(nums)
-	end := 0
-	maxPosition := 0
 	steps := 0
-	for i := 0; i < length-1; i++ {
-		maxPosition = max(maxPosition, i+nums[i])
-		if i == end {
-			end = maxPosition
+	end := 0
+	maxTarget := 0
+
+	for i := 0; i < len(nums)-1; i++ {
+		if i+nums[i] > maxTarget {
+			maxTarget = i + nums[i]
+		}
+
+		// 这一步是精华
+		// 到了上一步跳转能到的最大范围值的时候，增加跳转的步骤
+		if end == i {
+			end = maxTarget
 			steps++
 		}
 	}
+
 	return steps
 }
 
-func max(x, y int) int {
-	if x > y {
-		return x
+/*
+是个笨办法，两层循环
+
+时间复杂度是O(n^2)
+
+从最后的一个节点开始循环，然后找到能跳转到当前节点的最小索引的节点，然后更新当前节点到刚刚找到的最小节点，依次循环。。。。。
+*/
+func jump1(nums []int) int {
+	steps := 0
+	position := len(nums) - 1
+
+	for position > 0 {
+		for i := 0; i < position; i++ {
+			if nums[i]+i >= position {
+				position = i
+				steps++
+				break
+			}
+		}
 	}
-	return y
+
+	return steps
 }
