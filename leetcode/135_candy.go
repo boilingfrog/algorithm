@@ -35,6 +35,45 @@ n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的
 /*
 思路
 
+相比于下面的解法。这种解法难度更大一点，把几种之间的关系进行了总结
+
+具体可参看官方的题解 https://leetcode-cn.com/problems/candy/solution/fen-fa-tang-guo-by-leetcode-solution-f01p/
+
+时间负载度 O(N)
+
+空间复杂度 O(1)
+*/
+
+func candy(ratings []int) int {
+	nums := len(ratings)
+	candies, dec, inc, pre := 1, 1, 0, 1
+
+	for i := 1; i < nums; i++ {
+		if ratings[i] >= ratings[i-1] {
+			dec = 0
+			if ratings[i] == ratings[i-1] {
+				pre = 1
+			} else {
+				pre++
+			}
+			inc = pre
+			candies += pre
+		} else {
+			dec++
+			if dec == inc {
+				dec++
+			}
+			candies += dec
+			pre = 1
+		}
+	}
+
+	return candies
+}
+
+/*
+思路
+
 两遍循环，先左循环一遍，找出右节点和左节点的关系，如果右节点大于左节点left[i-1] + 1，计算出一遍值
 
 然后从右到左循环一遍，找出左节点和右节点的关系，如果左节点大于右节点target = target + 1，计算出一遍值
@@ -46,7 +85,7 @@ n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的
 空间复杂度 O(N)
 */
 
-func candy(ratings []int) int {
+func candy1(ratings []int) int {
 	nums := len(ratings) - 1
 	candies := 0
 	left := make([]int, nums+1)
