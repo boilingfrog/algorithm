@@ -23,6 +23,9 @@ package leetcode
 
 这里使用了栈，每次去处理一个字符串，先去栈中找出上一个，如果栈中的序列小于当前的字符串，并且栈中的在后面还有重复的字符串，弹出栈中元素，后面乜有重复的，当前元素入栈，依次循环
 
+时间复杂度是O(N)
+
+空间复杂度是O(N)
 */
 
 func removeDuplicateLetters(s string) string {
