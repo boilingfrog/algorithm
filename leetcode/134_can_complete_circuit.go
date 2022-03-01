@@ -59,11 +59,10 @@ func canCompleteCircuit(gas []int, cost []int) int {
 		return -1
 	}
 
-	// 从哪个加油站出发
 	start := 0
-	// 从start位置出发，汽车还剩余的汽油总量
 	sum := 0
 	for i := 0; i < n; i++ {
+		// 无法到达加油站 y 的下一个加油站，可以到达 y 以及 y 之前的所有加油站
 		if sum < 0 {
 			start = i
 			sum = 0
@@ -73,6 +72,5 @@ func canCompleteCircuit(gas []int, cost []int) int {
 		sum += left[i]
 	}
 
-	// 已经检查过了，一定有解，start必为解
 	return start
 }
