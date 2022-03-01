@@ -45,6 +45,7 @@ func jump(nums []int) int {
 		// 这一步是精华
 		// 到了上一步跳转能到的最大范围值的时候，增加跳转的步骤
 		if end == i {
+			// 下次可跳转的最大位置
 			end = maxTarget
 			steps++
 		}
@@ -65,6 +66,7 @@ func jump1(nums []int) int {
 	position := len(nums) - 1
 
 	for position > 0 {
+		// 里面的循环从头开始循环，这样就能找到能跳转的最小的索引值
 		for i := 0; i < position; i++ {
 			if nums[i]+i >= position {
 				position = i
