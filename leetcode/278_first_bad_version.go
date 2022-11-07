@@ -33,19 +33,18 @@ package leetcode
 
 [********########] 就像这样的有序数组，找第一个 # 号。
 
-使用二分法逐步缩小范围，中间值为false说明，应该去打的区间内查询，小的区间就可以丢弃了
+使用二分法逐步缩小范围，中间值为false说明，应该去大的区间内查询，小的区间就可以丢弃了
 */
 
 func firstBadVersion(n int) int {
-	left, right := 1, n
-	mid := left + (right-left)/2
+	left, right := 0, n
 	for left < right {
+		mid := (right + left) / 2
 		if isBadVersion(mid) {
 			right = mid
 		} else {
 			left = mid + 1
 		}
-
 	}
 
 	return right
