@@ -1,13 +1,7 @@
 package main
 
-import "fmt"
-
-func QuickSort(arr []int, n int) {
-
-	quickSort(arr, 0, n-1)
-
-	fmt.Println(arr)
-
+func QuickSort(arr []int) {
+	quickSort(arr, 0, len(arr)-1)
 }
 
 func quickSort(data []int, l, u int) {
