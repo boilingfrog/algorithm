@@ -1,9 +1,46 @@
 package main
 
-// 归并排序
-func MergeSort(arr []int, n int) {
+func MergeSort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
 
-	mergeSort(arr, 0, n-1)
+	mid := len(arr) / 2
+	leftArr := MergeSort(arr[0:mid])
+	rightArr := MergeSort(arr[mid:])
+	return merge(leftArr, rightArr)
+}
+
+func merge(left, right []int) []int {
+	i, j := 0, 0
+	m, n := len(left), len(right)
+	var result []int
+	// 合并子序列
+	for {
+		// 任何一个区间遍历完成就退出
+		if i >= m || j >= n {
+			break
+		}
+		if left[i] > right[j] {
+			result = append(result, right[j])
+			j++
+		} else {
+			result = append(result, left[i])
+			i++
+		}
+	}
+
+	// 左边的子集没有遍历完成，将左侧的放入到结果集
+	if i < m {
+		result = append(result, left[i:]...)
+	}
+
+	// 右侧的子集没有遍历完成，将右侧的放入到结果集中
+	if j < n {
+		result = append(result, right[j:]...)
+	}
+
+	return result
 }
 
 // 递归使用归并排序，对arr[1.......r]的范围进行排序
