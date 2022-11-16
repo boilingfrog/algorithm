@@ -6,42 +6,41 @@ import (
 
 func main() {
 	nums := []int{1, 3, 2, 3, 2, 3, 4, 6, 23, 34, 56, 78, 102}
-	fmt.Println(ReversePairs(nums))
+	fmt.Println(MergeSort(nums))
 }
 
-func ReversePairs(nums []int) int {
-	return mergeSort(nums, 0, len(nums)-1)
+func MergeSort(nums []int) []int {
+	mergeSort(nums, 0, len(nums)-1)
+	return nums
 }
 
-func mergeSort(nums []int, start, end int) int {
+func mergeSort(nums []int, start, end int) {
 	if start >= end {
-		return 0
+		return
 	}
 	mid := start + (end-start)/2
-	cnt := mergeSort(nums, start, mid) + mergeSort(nums, mid+1, end)
+	mergeSort(nums, start, mid)
+	mergeSort(nums, mid+1, end)
 	var tmp []int
 	i, j := start, mid+1
 	for i <= mid && j <= end {
 		if nums[i] > nums[j] {
 			tmp = append(tmp, nums[j])
-			cnt += mid - i + 1
 			j++
 		} else {
 			tmp = append(tmp, nums[i])
 			i++
 		}
 	}
-	for ; i <= mid; i++ {
-		tmp = append(tmp, nums[i])
-		cnt += end - j + 1
+	if i <= mid {
+		tmp = append(tmp, nums[i:mid+1]...)
 	}
 	if j <= end {
-		tmp = append(tmp, nums[j:]...)
+		tmp = append(tmp, nums[j:end+1]...)
 	}
 	for i := start; i <= end; i++ {
 		nums[i] = tmp[i-start]
 	}
-	return cnt
 }
 
 //func mergeSort(arr []int, l int, r int) int {
