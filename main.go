@@ -5,14 +5,88 @@ import (
 )
 
 func main() {
-
-	//fmt.Println(leetcode.SearchMatrix([][]int{
-	//	{-5},
-	//}, -10))
-
-	fmt.Println(test(10))
-
+	nums := []int{1, 3, 2, 3, 2, 3, 4, 6, 23, 34, 56, 78, 102}
+	fmt.Println(ReversePairs(nums))
 }
+
+func ReversePairs(nums []int) int {
+	return mergeSort(nums, 0, len(nums)-1)
+}
+
+func mergeSort(nums []int, start, end int) int {
+	if start >= end {
+		return 0
+	}
+	mid := start + (end-start)/2
+	cnt := mergeSort(nums, start, mid) + mergeSort(nums, mid+1, end)
+	var tmp []int
+	i, j := start, mid+1
+	for i <= mid && j <= end {
+		if nums[i] > nums[j] {
+			tmp = append(tmp, nums[j])
+			cnt += mid - i + 1
+			j++
+		} else {
+			tmp = append(tmp, nums[i])
+			i++
+		}
+	}
+	for ; i <= mid; i++ {
+		tmp = append(tmp, nums[i])
+		cnt += end - j + 1
+	}
+	if j <= end {
+		tmp = append(tmp, nums[j:]...)
+	}
+	for i := start; i <= end; i++ {
+		nums[i] = tmp[i-start]
+	}
+	return cnt
+}
+
+//func mergeSort(arr []int, l int, r int) int {
+//	if l >= r {
+//		return 0
+//	}
+//
+//	mid := l + (r-l)/2
+//	cnt := mergeSort(arr, l, mid)
+//	cnt += mergeSort(arr, mid+1, r)
+//	//if arr[mid] > arr[mid+1] {
+//	cnt += Merge(arr, l, mid, r)
+//	//}
+//
+//	return cnt
+//}
+//
+//func Merge(arr []int, l int, mid int, r int) int {
+//	num := r - l + 1
+//	aux := make([]int, num)
+//	for i := l; i <= r; i++ {
+//		aux[i-l] = arr[i] //l到r之间，放到临时的数组空间，0到l之间有一个l的偏移量
+//	}
+//	i := l
+//	j := mid + 1
+//	cnt := 0
+//	for k := l; k <= r; k++ {
+//		if i > mid {
+//			arr[k] = aux[j-l]
+//			j++
+//			cnt++
+//		} else if j > r {
+//			arr[k] = aux[i-l]
+//			i++
+//		} else if aux[i-l] < aux[j-l] {
+//			arr[k] = aux[i-l]
+//			i++
+//		} else {
+//			arr[k] = aux[j-l]
+//			j++
+//			cnt++
+//		}
+//	}
+//	return cnt
+//}
 
 func test(n int) [][]int {
 	var sil = make([][]int, n)
